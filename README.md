@@ -1,28 +1,39 @@
-1. Project Summary
-This project implements a hybrid quantum-classical machine learning pipeline to classify sensor readings (specifically tracking soil moisture and pump states for smart irrigation).
- The core objective is to compare a classical Support Vector Machine (SVM) against a Quantum Support Vector Classifier (QSVC) using a quantum kernel.
-The pipeline handles data preprocessing, feature reduction via Principal Component Analysis (PCA), quantum state embedding, and comparative model evaluation.
+# Quantum-Enhanced Sensor Classification
 
-2. System Architecture & Workflow
+A hybrid quantum-classical machine learning pipeline built to classify sensor readings (such as soil moisture and pump states for smart irrigation systems). This project implements and compares a classical Support Vector Machine (SVM) against a **Quantum Support Vector Classifier (QSVC)** using a quantum kernel to evaluate potential quantum advantages in low-dimensional sensor data classification.
+
+---
+
+## 1. Project Summary
+The core objective of this project is to implement an end-to-end pipeline that transforms raw engineering/environmental sensor data into quantum states for classification. By utilizing a quantum feature map, classical data is projected into a high-dimensional quantum Hilbert space where linear separation might become optimal. 
+
+The pipeline handles data preprocessing, feature reduction via Principal Component Analysis (PCA), quantum state embedding, and comparative model evaluation between an RBF-kernel classical SVM and a Qiskit-powered QSVC.
+
+---
+
+## 2. System Architecture & Workflow
+
 The machine learning pipeline consists of the following modular phases:
-[Raw Sensor Data] 
-       │
-       ▼
+
+[Raw Sensor Data]
+│
+▼
 [StandardScaler] ────► Standardizes features to zero mean and unit variance
-       │
-       ▼
+│
+▼
 [PCA Reduction] ─────► Reduces data to 3 dimensions (matches qubit capacity)
-       │
-       ▼
-[π Scaling] ─────────► Scales features by π for optimized quantum phase embedding
-       │
-  ┌────┴──────────────┐
-  ▼                   ▼
+│
+▼
+[π Scaling] ─────────► Scales features by pi for optimized quantum phase embedding
+│
+┌────┴──────────────┐
+▼                   ▼
 [Classical RBF SVM] [QSVC via ZZFeatureMap]
-  │                   │
-  └────┬──────────────┘
-       ▼
+│                   │
+└────┬──────────────┘
+▼
 [Performance Metrics] ──► F1-Score, Classification Report, Confusion Matrix
+
 
 ## 3. Detailed Component Breakdown
 
