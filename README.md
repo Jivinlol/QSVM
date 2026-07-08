@@ -14,25 +14,28 @@ The pipeline handles data preprocessing, feature reduction via Principal Compone
 ## 2. System Architecture & Workflow
 
 The machine learning pipeline consists of the following modular phases:
+## System Flow
 
-[Raw Sensor Data]
-│
-▼
-[StandardScaler] ────► Standardizes features to zero mean and unit variance
-│
-▼
-[PCA Reduction] ─────► Reduces data to 3 dimensions (matches qubit capacity)
-│
-▼
-[π Scaling] ─────────► Scales features by pi for optimized quantum phase embedding
-│
-┌────┴──────────────┐
-▼                   ▼
-[Classical RBF SVM] [QSVC via ZZFeatureMap]
-│                   │
-└────┬──────────────┘
-▼
-[Performance Metrics] ──► F1-Score, Classification Report, Confusion Matrix
+```mermaid
+flowchart TD
+    A[Raw Sensor Data]
+    B[StandardScaler<br/>Standardizes features to zero mean and unit variance]
+    C[PCA Reduction<br/>Reduces data to 3 dimensions (matches qubit capacity)]
+    D[π Scaling<br/>Scales features by π for optimized quantum phase embedding]
+
+    E[Classical RBF SVM]
+    F[QSVC via ZZFeatureMap]
+
+    G[Performance Metrics<br/>F1-Score, Classification Report, Confusion Matrix]
+
+    A --> B
+    B --> C
+    C --> D
+    D --> E
+    D --> F
+    E --> G
+    F --> G
+```
 
 
 ## 3. Detailed Component Breakdown
