@@ -18,15 +18,15 @@ The machine learning pipeline consists of the following modular phases:
 
 ```mermaid
 flowchart TD
-    A[Raw Sensor Data]
-    B[StandardScaler<br/>Standardizes features to zero mean and unit variance]
-    C[PCA Reduction<br/>Reduces data to 3 dimensions (matches qubit capacity)]
-    D[π Scaling<br/>Scales features by π for optimized quantum phase embedding]
+    A["Raw Sensor Data"]
+    B["StandardScaler<br/>Standardizes features to zero mean and unit variance"]
+    C["PCA Reduction<br/>Reduces data to 3 dimensions for qubit capacity"]
+    D["Pi Scaling<br/>Scales features by pi for quantum phase embedding"]
 
-    E[Classical RBF SVM]
-    F[QSVC via ZZFeatureMap]
+    E["Classical RBF SVM"]
+    F["QSVC via ZZFeatureMap"]
 
-    G[Performance Metrics<br/>F1-Score, Classification Report, Confusion Matrix]
+    G["Performance Metrics<br/>F1-Score<br/>Classification Report<br/>Confusion Matrix"]
 
     A --> B
     B --> C
